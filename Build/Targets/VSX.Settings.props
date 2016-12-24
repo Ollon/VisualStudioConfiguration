@@ -1,0 +1,76 @@
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+
+  <PropertyGroup>
+
+    <!-- Establish Design-Time Context-->
+    <VisualStudioVersion>15.0</VisualStudioVersion>
+    <MinimumVisualStudioVersion>$(VisualStudioVersion)</MinimumVisualStudioVersion>
+    
+    <!-- Get the root folder for the whole solution so we have an established point of reference -->
+    <RepositoryRootDirectory>$(MSBuildThisFileDirectory)..\..\</RepositoryRootDirectory>
+    <RepositoryRootDirectory>$([System.IO.Path]::GetFullPath('$(RepositoryRootDirectory)'))</RepositoryRootDirectory>
+
+    <!-- Set this now, in case we are building from the commandline -->
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">$(RepositoryRootDirectory)</SolutionDir>
+    
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+
+    <!-- Provide Easy Access to Top-Level folder structure for convenience. -->
+    <BinariesDir>$(RepositoryRootDirectory)Binaries\</BinariesDir>
+    <ObjDir>$(BinariesDir)Obj\</ObjDir>
+    <BuildDir>$(RepositoryRootDirectory)Build\</BuildDir>
+    <TargetsDir>$(RepositoryRootDirectory)Build\Targets\</TargetsDir>
+    <StrongNameKeyDir>$(RepositoryRootDirectory)Build\Strong Name Keys\</StrongNameKeyDir>
+    <SrcDir>$(RepositoryRootDirectory)Src\</SrcDir>
+    <ToolsDir>$(RepositoryRootDirectory)Tools\</ToolsDir>
+    
+    <!-- Outputs -->
+    <OutDir>$(BinariesDir)$(Configuration)\</OutDir>
+    <NuGetOutputPath>$(OutDir)NuGet\</NuGetOutputPath>
+    <VsixOutputPath>$(OutDir)Vsix\</VsixOutputPath>
+    <OutputPath>$(OutDir)</OutputPath>
+    <IntermediateOutputPath>$(ObjDir)$(MSBuildProjectName)\</IntermediateOutputPath>
+
+    <!-- For Reference, in case you want increase design-time capabilities. -->
+    <WpfProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</WpfProjectTypeGuids>
+    <VSXProjectTypeGuids>{82b43b9b-a64c-4715-b499-d71e9ca2bd60};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</VSXProjectTypeGuids>
+    
+    
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <HighEntropyVA>true</HighEntropyVA>
+    <FileAlignment>512</FileAlignment>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <GenerateSerializationAssemblies>off</GenerateSerializationAssemblies>
+    
+  </PropertyGroup>
+  <!-- Common Default Properties. To Override, declare these above the '<Import Project="..."/>' nodes at the begining of the project   -->
+  <PropertyGroup>
+    <OutputType Condition="'$(OutputType)'==''">Library</OutputType>
+    <FileAlignment Condition="'$(FileAlignment)'==''">512</FileAlignment>
+    <ErrorReport Condition="'$(ErrorReport)'==''">prompt</ErrorReport>
+    <AssemblyName Condition="'$(AssemblyName)'==''">$(MSBuildProjectName)</AssemblyName>
+    <RootNamespace Condition="'$(RootNamespace)'==''">$(MSBuildProjectName)</RootNamespace>
+    <Deterministic Condition="'$(Deterministic)'==''">true</Deterministic>
+    <HighEntropyVA Condition="'$(HighEntropyVA)'==''">true</HighEntropyVA>
+    <WarningLevel Condition="'$(WarningLevel)'==''">4</WarningLevel>
+    <GenerateSerializationAssemblies Condition="'$(GenerateSerializationAssemblies)'==''">off</GenerateSerializationAssemblies>
+  </PropertyGroup>
+
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' "/>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' "/>
+
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+    <AssemblyOriginatorKeyFile>$(StrongNameKeyDir)VisualStudioConfigurationSharedKey.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props"
+        Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  
+</Project>

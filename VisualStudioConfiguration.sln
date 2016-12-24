@@ -1,0 +1,38 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.26014.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Build", "Build", "{1B0FAC2B-13D6-48A2-983A-6CECC124BBFF}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Targets", "Targets", "{59B7D329-27DF-43FB-80E7-5613B6DD0D38}"
+	ProjectSection(SolutionItems) = preProject
+		Build\Targets\ProducesNoOutput.Imports.targets = Build\Targets\ProducesNoOutput.Imports.targets
+		Build\Targets\ProducesNoOutput.Settings.props = Build\Targets\ProducesNoOutput.Settings.props
+		Build\Targets\VSX.AssemblyInfo.targets = Build\Targets\VSX.AssemblyInfo.targets
+		Build\Targets\VSX.Imports.targets = Build\Targets\VSX.Imports.targets
+		Build\Targets\VSX.References.targets = Build\Targets\VSX.References.targets
+		Build\Targets\VSX.Settings.props = Build\Targets\VSX.Settings.props
+		Build\Targets\VSX.VsSDK.targets = Build\Targets\VSX.VsSDK.targets
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ollon.VisualStudio.Setup.Configuration", "Src\Ollon.VisualStudio.Setup.Configuration\Ollon.VisualStudio.Setup.Configuration.csproj", "{C398284B-C863-4328-927E-4361097F5031}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C398284B-C863-4328-927E-4361097F5031}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C398284B-C863-4328-927E-4361097F5031}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C398284B-C863-4328-927E-4361097F5031}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C398284B-C863-4328-927E-4361097F5031}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{59B7D329-27DF-43FB-80E7-5613B6DD0D38} = {1B0FAC2B-13D6-48A2-983A-6CECC124BBFF}
+	EndGlobalSection
+EndGlobal

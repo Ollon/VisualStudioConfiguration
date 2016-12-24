@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\..\Build\Targets\VSX.Settings.props" />
+  <PropertyGroup>
+    <ProjectGuid>{C398284B-C863-4328-927E-4361097F5031}</ProjectGuid>
+    <ProjectTypeGuids>{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <ProjectSubType>Library</ProjectSubType>
+    <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
+    <PackageId>Ollon.VisualStudio.Setup.Configuration</PackageId>
+    <Authors>Ollon, LLC</Authors>
+    <Title>Ollon.VisualStudio.Setup.Configuration</Title>
+    <Description>Provides an accessible interface for discovering Visual Studio Instances.</Description>
+    <Summary>Provides an accessible interface for discovering Visual Studio Instances.</Summary>
+    <Owners>bmarshall</Owners>
+  </PropertyGroup>
+  <PropertyGroup>
+    <RootNamespace>Ollon.VisualStudio</RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <None Include="project.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Interop\IEnumSetupInstances.cs" />
+    <Compile Include="Interop\InstanceState.cs" />
+    <Compile Include="Interop\ISetupConfiguration.cs" />
+    <Compile Include="Interop\ISetupConfiguration2.cs" />
+    <Compile Include="Interop\ISetupErrorState.cs" />
+    <Compile Include="Interop\ISetupFailedPackageReference.cs" />
+    <Compile Include="Interop\ISetupHelper.cs" />
+    <Compile Include="Interop\ISetupInstance.cs" />
+    <Compile Include="Interop\ISetupInstance2.cs" />
+    <Compile Include="Interop\ISetupPackageReference.cs" />
+    <Compile Include="Interop\SetupConfiguration.cs" />
+    <Compile Include="Interop\SetupConfigurationClass.cs" />
+    <Compile Include="Setup\Configuration\SetupEnvironment.cs" />
+    <Compile Include="Setup\Configuration\SetupInstance.cs" />
+    <Compile Include="Setup\Configuration\SetupPackageReference.cs" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="..\..\Build\Targets\VSX.Imports.targets" />
+</Project>

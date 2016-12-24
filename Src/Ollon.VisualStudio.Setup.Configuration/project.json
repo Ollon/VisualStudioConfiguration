@@ -1,0 +1,11 @@
+﻿{
+  "dependencies": {
+    "NuGet.Build.Packaging": "0.1.164-dev"
+  },
+  "frameworks": {
+    ".NETFramework,Version=v4.6.2": {}
+  },
+  "runtimes": {
+    "win": {}
+  }
+}
