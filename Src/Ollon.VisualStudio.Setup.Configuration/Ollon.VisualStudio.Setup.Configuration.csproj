@@ -7,13 +7,22 @@
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <ProjectSubType>Library</ProjectSubType>
-    <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <PackageId>Ollon.VisualStudio.Setup.Configuration</PackageId>
     <Authors>Ollon, LLC</Authors>
     <Title>Ollon.VisualStudio.Setup.Configuration</Title>
     <Description>Provides an accessible interface for discovering Visual Studio Instances.</Description>
     <Summary>Provides an accessible interface for discovering Visual Studio Instances.</Summary>
     <Owners>bmarshall</Owners>
+    <TargetFrameworkProfile />
+    <Copyright>© 2017 Ollon, LLC. All Rights Reserved.</Copyright>
+    <PackageIconUrl>http://aka.ms/VsExtensibilityIcon</PackageIconUrl>
+    <PackageProjectUrl>https://github.com/Ollon/VisualStudioConfiguration</PackageProjectUrl>
+    <PackageLicenseUrl>https://raw.githubusercontent.com/Ollon/VisualStudioConfiguration/master/LICENSE</PackageLicenseUrl>
+    <NeutralLanguage>en</NeutralLanguage>
+    <PackageReleaseNotes>Access the current visual studio instance via the %27SetupEnvironment.GetSetupInstance%28%29%27 method.
+
+SetupEnvironment is in the Global Namespace and is static.</PackageReleaseNotes>
   </PropertyGroup>
   <PropertyGroup>
     <RootNamespace>Ollon.VisualStudio</RootNamespace>

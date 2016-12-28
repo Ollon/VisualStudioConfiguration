@@ -10,28 +10,28 @@ namespace Ollon.VisualStudio.Interop
     public interface ISetupInstance2 : ISetupInstance
     {
         [return: MarshalAs(UnmanagedType.BStr)]
-        string GetInstanceId();
+        new string GetInstanceId();
 
         [return: MarshalAs(UnmanagedType.Struct)]
-        System.Runtime.InteropServices.ComTypes.FILETIME GetInstallDate();
+        new System.Runtime.InteropServices.ComTypes.FILETIME GetInstallDate();
 
         [return: MarshalAs(UnmanagedType.BStr)]
-        string GetInstallationName();
+        new string GetInstallationName();
 
         [return: MarshalAs(UnmanagedType.BStr)]
-        string GetInstallationPath();
+        new string GetInstallationPath();
 
         [return: MarshalAs(UnmanagedType.BStr)]
-        string GetInstallationVersion();
+        new string GetInstallationVersion();
 
         [return: MarshalAs(UnmanagedType.BStr)]
-        string GetDisplayName([MarshalAs(UnmanagedType.U4)] [In] int lcid = 0);
+        new string GetDisplayName([MarshalAs(UnmanagedType.U4)] [In] int lcid = 0);
 
         [return: MarshalAs(UnmanagedType.BStr)]
-        string GetDescription([MarshalAs(UnmanagedType.U4)] [In] int lcid = 0);
+        new string GetDescription([MarshalAs(UnmanagedType.U4)] [In] int lcid = 0);
 
         [return: MarshalAs(UnmanagedType.BStr)]
-        string ResolvePath([MarshalAs(UnmanagedType.LPWStr)] [In] string pwszRelativePath = null);
+        new string ResolvePath([MarshalAs(UnmanagedType.LPWStr)] [In] string pwszRelativePath = null);
 
         [return: MarshalAs(UnmanagedType.U4)]
         InstanceState GetState();
