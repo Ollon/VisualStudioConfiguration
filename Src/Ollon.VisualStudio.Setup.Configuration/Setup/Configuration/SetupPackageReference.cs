@@ -1,5 +1,7 @@
-﻿using Ollon.VisualStudio.Interop;
+﻿
 
+
+using Microsoft.VisualStudio.Setup.Configuration;
 
 public class SetupPackageReference
 {

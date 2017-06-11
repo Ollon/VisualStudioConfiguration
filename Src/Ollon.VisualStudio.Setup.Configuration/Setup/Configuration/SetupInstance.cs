@@ -1,7 +1,7 @@
 ﻿using System.Linq;
 using System.Collections.Generic;
 using System;
-using Ollon.VisualStudio.Interop;
+using Microsoft.VisualStudio.Setup.Configuration;
 
 public class SetupInstance
 {

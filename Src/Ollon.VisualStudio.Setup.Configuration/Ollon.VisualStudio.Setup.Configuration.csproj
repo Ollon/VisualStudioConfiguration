@@ -1,13 +1,7 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <Import Project="..\..\Build\Targets\VSX.Settings.props" />
+﻿<Project>
+  <Import Project="Sdk.props" Sdk="Microsoft.NET.Sdk" />
   <PropertyGroup>
-    <ProjectGuid>{C398284B-C863-4328-927E-4361097F5031}</ProjectGuid>
-    <ProjectTypeGuids>{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
-    <OutputType>Library</OutputType>
-    <AppDesignerFolder>Properties</AppDesignerFolder>
-    <ProjectSubType>Library</ProjectSubType>
-    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetFramework>net46</TargetFramework>
     <PackageId>Ollon.VisualStudio.Setup.Configuration</PackageId>
     <Authors>Ollon, LLC</Authors>
     <Title>Ollon.VisualStudio.Setup.Configuration</Title>
@@ -26,27 +20,24 @@ SetupEnvironment is in the Global Namespace and is static.</PackageReleaseNotes>
   </PropertyGroup>
   <PropertyGroup>
     <RootNamespace>Ollon.VisualStudio</RootNamespace>
+    <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+    <PackageRequireLicenseAcceptance>True</PackageRequireLicenseAcceptance>
   </PropertyGroup>
+
+
+  <Target Name="LinkVSSDKEmbeddableAssemblies" DependsOnTargets="ResolveReferences" AfterTargets="ResolveReferences">
+    <ItemGroup>
+      <ReferencePath Condition="&#xD;&#xA;              '%(FileName)' == 'Microsoft.VisualStudio.Setup.Configuration.Interop'&#xD;&#xA;           or '%(FileName)' == 'Microsoft.VisualStudio.Shell.Embeddable'&#xD;&#xA;           or '%(FileName)' == 'Microsoft.VisualStudio.Shell.Interop.12.0'&#xD;&#xA;           or '%(FileName)' == 'Microsoft.VisualStudio.Shell.Interop.12.1.DesignTime'&#xD;&#xA;           or '%(FileName)' == 'Microsoft.VisualStudio.Shell.Interop.14.0.DesignTime'&#xD;&#xA;           or '%(FileName)' == 'Microsoft.VisualStudio.Shell.Interop.15.0.DesignTime'&#xD;&#xA;           or '%(Filename)' == 'Microsoft.VisualStudio.Imaging.Interop.14.0.DesignTime'&#xD;&#xA;           or '%(FileName)' == 'Microsoft.VisualStudio.TextManager.Interop.12.1.DesignTime'&#xD;&#xA;           or '%(FileName)' == 'Microsoft.VisualStudio.ProjectSystem.Interop'&#xD;&#xA;           or '%(FileName)' == 'stdole'&#xD;&#xA;           or '%(FileName)' == 'Microsoft.VisualStudio.CommandBars'&#xD;&#xA;           or '%(FileName)' == 'NuGet.SolutionRestoreManager.Interop'&#xD;&#xA;           or '%(FileName)' == 'NuGet.VisualStudio'&#xD;&#xA;              ">
+        <EmbedInteropTypes>true</EmbedInteropTypes>
+      </ReferencePath>
+    </ItemGroup>
+  </Target>
+
+
+  <Import Project="Sdk.targets" Sdk="Microsoft.NET.Sdk" />
+
+
   <ItemGroup>
-    <None Include="project.json" />
+    <PackageReference Include="Microsoft.VisualStudio.Setup.Configuration.Interop" Version="1.8.24" />
   </ItemGroup>
-  <ItemGroup>
-    <Compile Include="Interop\IEnumSetupInstances.cs" />
-    <Compile Include="Interop\InstanceState.cs" />
-    <Compile Include="Interop\ISetupConfiguration.cs" />
-    <Compile Include="Interop\ISetupConfiguration2.cs" />
-    <Compile Include="Interop\ISetupErrorState.cs" />
-    <Compile Include="Interop\ISetupFailedPackageReference.cs" />
-    <Compile Include="Interop\ISetupHelper.cs" />
-    <Compile Include="Interop\ISetupInstance.cs" />
-    <Compile Include="Interop\ISetupInstance2.cs" />
-    <Compile Include="Interop\ISetupPackageReference.cs" />
-    <Compile Include="Interop\SetupConfiguration.cs" />
-    <Compile Include="Interop\SetupConfigurationClass.cs" />
-    <Compile Include="Setup\Configuration\SetupEnvironment.cs" />
-    <Compile Include="Setup\Configuration\SetupInstance.cs" />
-    <Compile Include="Setup\Configuration\SetupPackageReference.cs" />
-  </ItemGroup>
-  <ItemGroup />
-  <Import Project="..\..\Build\Targets\VSX.Imports.targets" />
 </Project>

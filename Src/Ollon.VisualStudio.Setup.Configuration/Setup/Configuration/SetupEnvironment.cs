@@ -1,4 +1,5 @@
-﻿using Ollon.VisualStudio.Interop;
+﻿
+using Microsoft.VisualStudio.Setup.Configuration;
 using System;
 using System.Collections.Generic;
 using System.Runtime.InteropServices;
